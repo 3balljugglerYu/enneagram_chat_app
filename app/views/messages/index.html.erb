@@ -1,2 +1,53 @@
-<h1>Messages#index</h1>
-<p>エニアグラムチャット</p>
+<div class="all">
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <h1>EnneagramChat</h1>
+    </div>
+    <div class="top-ba-btn">
+      <p> <%= link_to "ユーザー検索", "#" %> </p>
+      <p> <%= link_to "グループ結成", "#" %> </p>
+      <p> <%= link_to "マイページ", "#" %> </p>
+      <p> <%= link_to "エニアグラムとは", "#" %> </p>
+    </div>
+  </div>
+  <div class="entire">
+    <div class="side-entire">
+      <div class="side-header">
+        <%#= link_to image_tag("enne_chat_logo.png"),"/", class: "header-logo" %>
+        <%#= link_to "アカウント編集" , edit_user_path(current_user) %> 
+        <%# <span>/</span> %>
+        <div class="header-logo">
+          <%= link_to "image-logo", "#" %>
+        </div>
+        <div class="login-logout">
+          <div class="login">
+            <%= link_to "ログイン", "#" %>
+          </div>
+          <span>/</span>
+          <div class="signup">
+            <%= link_to "新規登録", "#" %>
+          </div>
+        </div>
+        <%# <div class="logout">
+          <%#= link_to "ログアウト" %
+        </div> %>
+      </div>
+      <div class="side-center_and_footer">
+        <div class="side-center">
+          <p>グループ</p>
+        </div>
+        <div class="side-footer">
+          <p>ユーザー</p>
+        </div>
+      </div>
+    </div>
+    <div class="main-entire">
+      <div class="main">
+        <h2>仕事の生産性をサポートする<br>エニアグラムチャット</h2>
+      </div>
+      <div class="main-image">
+        <%= image_tag 'enneagramChat.png' %>
+      </div>
+    </div>
+  </div>
+</div>

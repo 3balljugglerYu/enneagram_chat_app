@@ -1,0 +1,145 @@
+.all{
+  width: 100vw;
+}
+
+.top-bar{
+  /* width: 100vw; */
+  width: 100%;
+  display: flex;
+  height: 50px;
+  background-color: rgb(62, 62, 62);
+}
+
+.top-bar-title{
+  display: flex;
+  background-color: rgb(62, 62, 62);
+  width: 300px;
+}
+
+.top-bar-title h1{
+  margin: auto;
+  color: rgb(255, 255, 255);
+}
+
+.top-ba-btn{
+  width: calc(100% - 300px);
+  display: flex;
+  background-color: rgb(62, 62, 62);
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 100px;
+}
+
+  .top-ba-btn a {
+    text-decoration: none;
+    padding: 10px 40px;
+    color: rgba(255, 255, 255, 0.976);
+  }
+  
+  .entire{
+    display: flex;
+    
+    }
+
+  .side-entire{
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .side-header{
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .header-logo{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(74, 74, 74);
+    margin: 25px auto;
+    text-align: center;
+  }
+
+  .login-logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-logout span {
+    padding: 0 10px;
+  }
+
+  .login a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+
+  .signup a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+
+  .logout a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .side-center_and_footer{
+    height: calc(100% - 300px );
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .side-center{
+    height: 30%;
+    background-color: rgb(255, 255, 255);
+    overflow: scroll;
+  }
+
+  .side-center p {
+    border-top: solid 2px rgb(225, 225, 225);
+    border-bottom: solid 2px rgb(225, 225, 225);  }
+  
+  .side-footer{
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+    overflow: scroll;
+  }
+
+  .side-footer p {
+    border-top: solid 2px rgb(225, 225, 225);
+    border-bottom: solid 2px rgb(225, 225, 225);
+  }
+  
+  .main-entire{
+    width: calc(100% - 300px);
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    border-left: solid 2px rgb(225, 225, 225);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main{
+  }
+
+  .main h2{
+    text-align: center;
+    font-size: 70px;
+    padding: 30px 0;
+    font-family: 'ヒラギノ明朝 Pro W3';
+  }
+
+  .main-image{
+    margin: 0 auto 50px;
+  }
+  .main-image img{
+    height: 700px;
+    width: 700px;
+  }
+
+  
