@@ -24,7 +24,7 @@
     <div class="skip">
       <%= form_with model: @enneagram_type, local: true do |f| %>
         <%= f.collection_select(:type_result_id, TypeResult.all, :id, :name, {}, {class:":type_result_select"}) %>
-        <%= f.submit "登録", class:"btn" %>
+        <%= f.submit "登録", class:"register-btn" %>
       <% end %>
     </div>
     <p>

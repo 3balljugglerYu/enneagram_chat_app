@@ -7,6 +7,7 @@ class EnneagramTypesController < ApplicationController
   end
 
   def show
+    @enneagram_type = EnneagramType.find(params[:id])
   end
 
   def create
@@ -15,7 +16,7 @@ class EnneagramTypesController < ApplicationController
       @enneagram_type.save
       redirect_to root_path
     else
-      render :index
+      redirect_to enneagram_types_path
     end
   end
 
