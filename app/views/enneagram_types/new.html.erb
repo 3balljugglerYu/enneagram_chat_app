@@ -1,0 +1,49 @@
+<%= render "shared/header"%>
+
+<div class="all">
+  <div class="title">
+      <h1>エニアグラム診断</h1>
+      <p class="bar"> </p>
+    </div>
+  <div class="explanation">
+    <div class="expanation">
+    <p>
+      当てはまるものだけにチェックをしてください。最後の診断ボタンを押すことで、あなたのタイプがわかります。
+    </p>
+  </div>
+  </div>
+  <div class="question">
+    <div class="question">
+  <%= form_with method: :post, rocal: true do |f| %>
+    <div class="check_box_format">
+      <%= f.check_box :checks_a, class:"check_box", id: "checks" %>
+      <%= f.label :自分自身に厳しくする気持ちが強く、いつもきちんとしている。%>
+    </div>
+    <div class="check_box_format">
+      <%= f.check_box :checks_a, class:"check_box", id: "checks" %>
+      <%= f.label :その場の状況にあわせて柔軟に対応することは得意である。%>
+    </div>
+    <div class="check_box_format">
+      <%= f.check_box :checks_a, class:"check_box", id: "checks" %>
+      <%= f.label :得た知識や情報をよく考えて分析することが好きだ。%>
+    </div>
+    <div class="check_box_format">
+      <%= f.check_box :checks_a, class:"check_box", id: "checks" %>
+      <%= f.label :いつもいろいろな可能性をさがしている。%>
+    </div>
+    <button id="btn" type="button">Count</button>
+    <div class="count_a">
+      <span>TypeAの合計は</span>
+      <span>
+        <span id="sum_a"></span>個でした。
+      </span>
+    </div>
+  <% end %>
+</div>
+  </div>
+  <div class="finish">
+    <p>送信</p>
+  </div>
+</div>
+
+<%= render "shared/footer"%>

@@ -22,18 +22,18 @@
 
 ## enneagram_types テーブル
 
-| Column                | Type     | Options       | 
-| --------------------- | -------- | ------------- | 
-| type                  | string   | null: false   | 
-| perfectionist_sum     | integer  |               |
-| giver_sum             | integer  |               |
-| achiever_sum          | integer  |               | 
-| individualist_sum     | integer  |               | 
-| investigator_sum      | integer  |               | 
-| skeptic_sum           | integer  |               |
-| enthusiast_sum        | integer  |               | 
-| challenger_sum        | integer  |               | 
-| peacemaker_sum        | integer  |               | 
+| Column                | Type     |
+| --------------------- | -------- |
+| type                  | string   |
+| perfectionist_sum     | integer  |
+| giver_sum             | integer  |
+| achiever_sum          | integer  | 
+| individualist_sum     | integer  | 
+| investigator_sum      | integer  | 
+| skeptic_sum           | integer  |
+| enthusiast_sum        | integer  | 
+| challenger_sum        | integer  | 
+| peacemaker_sum        | integer  | 
 
 ### Association
 - has_many :users

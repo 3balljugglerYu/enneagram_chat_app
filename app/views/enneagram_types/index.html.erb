@@ -1,0 +1,63 @@
+<%= render "shared/header"%>
+  
+<div class="all">
+  <div class="main-image">
+    <%= image_tag 'enneagramChat.png' %>
+  </div>
+  <div class="title">
+    <h1>エニアグラム診断とは</h1>
+    <p class="bar"> </p>
+  </div>
+  <div class="expanation">
+    <p>
+      エニアグラムは個人の特性を9つのタイプに分類します。<br>
+      すべての人はそのうちの一つに当てはまると言われています。<br> 
+      9つの性格タイプには、どれが優れており、どれが劣っている、という優劣はありません。<br> 
+      大切なのは、自分を知り、「より良い自分」になることです。
+    </p>
+  </div>
+  <div class="title">
+    <h1>既にタイプが分かっている方</h1>
+    <p class="bar"> </p>
+  </div>
+  <div class="expanation">
+    <div class="skip">
+      <%= form_with model: @enneagram_type, local: true do |f| %>
+        <%= f.collection_select(:type_result_id, TypeResult.all, :id, :name, {}, {class:":type_result_select"}) %>
+        <%= f.submit "登録", class:"btn" %>
+      <% end %>
+    </div>
+    <p>
+      自身のタイプを選択した上で、登録ボタンを押してください
+    </p>
+  </div>
+  <div class="title">
+    <h1>診断の受け方</h1>
+    <p class="bar"> </p>
+  </div>
+  <div class="expanation">
+    <p>自分が20歳以下だったときにどうだったか考えるようにしてください。<br>
+      20歳以下がその人の本質だからです。<br> 
+      自分は「こうありたい」、「ねばならない」ではなく、20歳の自分を想定して直感でチェックしてください。<br>
+      自分に当てはまるもの、思い当たるもの、そして賛同できるもの、すべてにチェックを入れて下さい。 <br>
+      全てチェックを付けましたら、診断ボタンをクリックしてください。問題は全部で90問あります。
+    </p>
+  </div>
+  <div class="title">
+    <h1>診断を始める</h1>
+    <p class="bar"> </p>
+  </div>
+  <div class="expanation">
+    <p>20際の頃のイメージはついたでしょうか？<br>
+      そのイメージを描きながら診断を初めてください<br> 
+      下記をクリックすると診断が始まります。<br>
+    </p>
+  </div>
+  <div class="btn">
+    <div class="start-btn">
+      <%= link_to "診断スタート", new_enneagram_type_path %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer"%>
