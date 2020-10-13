@@ -1,4 +1,9 @@
 
+// function decision(count) {
+//   Math.max.apply(null, count);
+// }
+
+
 function countCheckedCheckbox(elements, sumElement, logname) {
   let count = 0;
   for (let i = 0; i < elements.length; i++){
@@ -8,13 +13,13 @@ function countCheckedCheckbox(elements, sumElement, logname) {
   }
 
   console.log(`${logname}の合計は${count}です`);
-  sumElement.innerHTML = count;
-  // sumElement.value = count;
-  // countSumA.value = "SYNCER";
-  // document.getElementById( "sum_one" ).value = "SYNCER" ;
+  
+  // var arr = new Array();
+  // arr.push(count)
+  // decision(count)
+  sumElement.value = count;
 
 }
-
 
 function checkbox() {
 

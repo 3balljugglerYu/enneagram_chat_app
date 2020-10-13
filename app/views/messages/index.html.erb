@@ -5,23 +5,29 @@
     <div class="side-entire">
       <div class="side-header">
         <%#= link_to image_tag("enne_chat_logo.png"),"/", class: "header-logo" %>
-        <%#= link_to "アカウント編集" , edit_user_path(current_user) %> 
         <%# <span>/</span> %>
         <div class="header-logo">
           <%= link_to "image-logo", "#" %>
         </div>
-        <div class="login-logout">
-          <div class="login">
-            <%= link_to "ログイン", "#" %>
-          </div>
-          <span>/</span>
-          <div class="signup">
-            <%= link_to "新規登録", "#" %>
-          </div>
+        <div class="user_lists">
+          <% if user_signed_in? %>
+            <div class="user_list">
+              <%= link_to "アカウント編集" , edit_user_path(current_user), class: "edit" %> 
+            </div>
+            <span>/</span>
+            <div class="user_list">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+            </div>
+          <% else %>
+            <div class="user_list">
+              <%= link_to "ログイン", new_user_session_path, class: "login" %>
+            </div>
+            <span>/</span>
+            <div class="user_list">
+              <%= link_to "新規登録", new_user_registration_path, class: "signup" %>
+            </div>
+          <% end %>
         </div>
-        <%# <div class="logout">
-          <%#= link_to "ログアウト" %
-        </div> %>
       </div>
       <div class="side-center_and_footer">
         <div class="side-center">

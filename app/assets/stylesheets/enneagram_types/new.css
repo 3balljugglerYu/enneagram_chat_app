@@ -13,7 +13,6 @@
   display: flex;
   height: 50px;
   width: 900px;
-  margin: 10px;
   cursor: pointer;
 }
 
@@ -49,29 +48,47 @@
   width: 200px;
   font-size: 30px;
   color: rgb(129, 109, 109);
-  margin-top: 10px;
+  margin: 20px 0 ;
   cursor: pointer;
 }
 
-.enneagram-sum{
-
-  margin: 0 auto;
-  text-align: left;
-  padding-top: 20px;
-}
-
-.result {
+.enneagram_types{
+  font-size: 25px;
   display: flex;
-  border-bottom: 1px solid rgb(192, 192, 192);
-  margin-bottom: 20px;
+  flex-direction: column;
+  text-align: end;
+  margin-right: 300px;
   color: rgb(129, 109, 109);
 }
 
-.type_name{
-  width: 300px;
+.enneagram_type{
+  padding-bottom: 20px;
 }
 
 .count_num{
   width: 100px;
   text-align: center;
+}
+
+.type_select{
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  padding-left: 10px;
+  color: rgb(129, 109, 109);
+
+}
+
+.decision{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+.registerbtn{
+  width: 100px;
+  margin-left: 20px;
+  font-size: 30px;
+  color: rgb(129, 109, 109);
 }

@@ -23,7 +23,6 @@
     padding-top: 50px;
   }
   .title h1 {
-    /* font-size: 70px; */
     font-size: 70px;
     color: rgb(129, 109, 109);
   }
@@ -36,13 +35,13 @@
     padding-top: 50px;
   }
 
-  select{
+  /* select{
   height: 60px;
   width: 200px;
   background-color: #eadbdb;
   padding-left: 20px;
   font-size: 25px;
-  }
+  } */
 
   .register-btn{
     height: 60px;
@@ -71,3 +70,4 @@
     color: rgb(67, 67, 67);
   }
 
+  
