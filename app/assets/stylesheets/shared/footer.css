@@ -1,7 +1,5 @@
 .bottom-bar{
-  width: 100%;
-  display: flex;
+  width: 100vw;
   height: 50px;
   background-color: rgb(62, 62, 62);
-  margin-top: 100px;
   }

@@ -1,18 +1,18 @@
+
+
 .all{
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
   .main-image{
     margin: 0 auto 50px;
   }
   .main-image img{
-    height: 700px;
-    width: 700px;
-  }
-  
-  .all {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    height: 500px;
+    width: 500px;
+    margin-top: 100px;
   }
 
   .title {
@@ -31,17 +31,14 @@
     border-bottom: 5px solid rgb(225, 225, 225);
   }
 
+
+  .skip select{
+    height: 40px;
+  }
+
   .expanation{
     padding-top: 50px;
   }
-
-  /* select{
-  height: 60px;
-  width: 200px;
-  background-color: #eadbdb;
-  padding-left: 20px;
-  font-size: 25px;
-  } */
 
   .register-btn{
     height: 60px;
@@ -62,6 +59,7 @@
     margin: 15px auto;
     padding-top: 10px;
   }
+  
   .start-btn a {
     background-color: #eadbdb;
     font-size: 25px;
@@ -69,5 +67,3 @@
     padding: 5px 40px;
     color: rgb(67, 67, 67);
   }
-
-  

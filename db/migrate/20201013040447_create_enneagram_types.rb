@@ -11,6 +11,7 @@ class CreateEnneagramTypes < ActiveRecord::Migration[6.0]
       t.integer :enthusiast_sum    
       t.integer :challenger_sum    
       t.integer :peacemaker_sum    
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

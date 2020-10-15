@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  # get 'enneagram_types/index'
-  root to: "messages#index"
+  root to: "groups#index"
+  resources :users, only: [:edit, :update]
   resources :enneagram_types
+  resources :groups, only: [:new, :create, :destroy] do
+    resources :messages, only:[:index, :create]
+  end
 end

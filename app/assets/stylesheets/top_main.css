@@ -1,0 +1,17 @@
+/* group-main */
+
+.groups_title h1 {
+  text-align: center;
+  font-size: 70px;
+  padding: 10px 0 0 0;
+  font-family: 'ヒラギノ明朝 Pro W3';
+}
+
+.groups_main_logo{
+  text-align: center;
+}
+
+.groups_main_logo img{
+  height: 500px;
+  width: 500px;
+}

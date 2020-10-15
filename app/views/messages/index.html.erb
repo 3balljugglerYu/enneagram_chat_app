@@ -1,52 +1,40 @@
 <%= render "shared/header"%>
 
-<div class="all">
-  <div class="entire">
-    <div class="side-entire">
-      <div class="side-header">
-        <%#= link_to image_tag("enne_chat_logo.png"),"/", class: "header-logo" %>
-        <%# <span>/</span> %>
-        <div class="header-logo">
-          <%= link_to "image-logo", "#" %>
-        </div>
-        <div class="user_lists">
-          <% if user_signed_in? %>
-            <div class="user_list">
-              <%= link_to "アカウント編集" , edit_user_path(current_user), class: "edit" %> 
-            </div>
-            <span>/</span>
-            <div class="user_list">
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
-            </div>
-          <% else %>
-            <div class="user_list">
-              <%= link_to "ログイン", new_user_session_path, class: "login" %>
-            </div>
-            <span>/</span>
-            <div class="user_list">
-              <%= link_to "新規登録", new_user_registration_path, class: "signup" %>
-            </div>
-          <% end %>
+<div class="main">
+
+  <%= render "shared/side_message"%>
+
+  <div class="chat_main">
+    <div class="chat_header">
+      <div class="left_header">
+        <div class="header_title">
+          <%= @group.name %>
         </div>
       </div>
-      <div class="side-center_and_footer">
-        <div class="side-center">
-          <p>グループ</p>
-        </div>
-        <div class="side-footer">
-          <p>ユーザー</p>
+      <div class="right_header">
+        <div class="header_button">
+          <%= link_to "チャットを終了する", group_path(@group), method: :delete %>
         </div>
       </div>
     </div>
-    <div class="main-entire">
-      <div class="main">
-        <h2>仕事の生産性をサポートする<br>エニアグラムチャット</h2>
-      </div>
-      <div class="main-image">
-        <%= image_tag 'enneagramChat.png' %>
-      </div>
+
+    <div class="messages">
+      <%= render partial: "message", collection: @messages %>
     </div>
+
+    <%= form_with model: [@group, @message], class: "form", local: true do |f| %>
+      <div class="form_input">
+        <%= f.text_field :content, class: "form_message", placeholder: "type a message" %>
+        <label class="form_image">
+          <span class="image-file">画像</span>
+          <%= f.file_field :image, class: "hidden" %>
+        </label>
+      </div>
+      <%= f.submit "送信", class: "form_submit" %>
+    <% end %>
+
   </div>
 </div>
+
 
 <%= render "shared/footer"%>
