@@ -1,8 +1,13 @@
+.all_view{
+  height: 100vh;
+}
+
 .main{
   display: flex;
+  height: calc(100% - 100px);
 }
 .chat_main{
-  width: calc(100vw - 300px);
+  width: calc(100% - 300px);
 }
 
 /* messages-header */
@@ -37,7 +42,7 @@
 
 .messages{
   background-color: rgb(255, 255, 255);
-  height: calc(100vh - 100px - 90px);
+  height: calc(100% - 100px - 90px);
   padding: 46px 40px 0;
   overflow: scroll;
 }
