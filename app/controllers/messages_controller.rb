@@ -1,8 +1,10 @@
 class MessagesController < ApplicationController
   def index
+    # binding.pry
     @message = Message.new
     @group = Group.find(params[:group_id])
     @messages = @group.messages.includes(:user)
+    # @user_group = UserGroup.find(params[:user_group_id])
   end
 
   def create
