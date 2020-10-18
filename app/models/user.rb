@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  belongs_to :enneagram_type, optional: true
+  # has_one :enneagram_type, optional: true
+  has_one :enneagram_type
   has_many :user_groups
   has_many :groups, through: :user_groups
   has_many :messages

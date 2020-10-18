@@ -2,6 +2,8 @@
   <div class="upper_message">
     <div class="message_user">
       <%= message.user.nickname %>
+      <%# <span>[タイプ:</span> %>
+        <%#= message.user.enneagram_type&.type_result.name %>]
     </div>
     <div class="message_date">
       <%= l message.created_at %>
