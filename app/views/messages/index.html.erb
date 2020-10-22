@@ -1,16 +1,45 @@
 <div class="all_view">
 <%= render "shared/header"%>
   <div class="main">
+  
     <%= render "shared/side_message"%>
+    
     <div class="chat_main">
       <div class="chat_header">
         <div class="left_header">
           <div class="header_title">
-            <%= @group.name %>
-            <%#= @group.user_group.user_id %>
-            <%#= @message.user.nickname %>
-            <%#= @messages.message.user.nickname %>
-            
+            <div class="group_name">
+              <%= @group.name %>
+            </div>
+
+
+            <% if @group.user_groups.first.user_id == current_user.id %>
+              <div class="partner_info">
+                <div class="partner_name">
+                  <%= @group.user_groups.second.user.nickname %><span>さん　</span>
+                </div>
+                <div class="partner_type">
+                  タイプ：<%= @group.user_groups.second.user.enneagram_type&.type_result&.name %>
+                </div>
+              </div>
+              <div class="never_do">
+                決してやらない事：<%= @group.user_groups.second.user.enneagram_type&.type_result&.never_do %>
+              </div>
+              
+            <% else %>
+
+              <div class="partner_info">
+                <div class="partner_name">
+                  <%= @group.user_groups.first.user.nickname %><span>さん　</span>
+                </div>
+                <div class="partner_type">
+                  タイプ：<%= @group.user_groups.first.user.enneagram_type&.type_result&.name %>
+                </div>
+              </div>
+              <div class="never_do">
+                決してやらない事：<%= @group.user_groups.first.user.enneagram_type&.type_result&.never_do %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="right_header">
@@ -20,7 +49,9 @@
         </div>
       </div>
       <div class="messages">
+
         <%= render partial: "message", collection: @messages %>
+
       </div>
       <%= form_with model: [@group, @message], class: "form", local: true do |f| %>
         <div class="form_input">

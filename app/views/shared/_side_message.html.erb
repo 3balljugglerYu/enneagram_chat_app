@@ -2,9 +2,11 @@
   <div class="side-entire">
     <div class="side-header">
       <%#= link_to image_tag("enne_chat_logo.png"),"/", class: "header-logo" %>
+      <%#= image_tag 'enneagramChat-logo.jpg'%>
       <%# <span>/</span> %>
       <div class="header-logo">
-        <%= link_to "image-logo", "/" %>
+        <%#= link_to 'enneagramChat-logo.jpg', "/" %>
+        <%= image_tag 'enneagramChat.png' %>
       </div>
       <div class="user_name">
         <%= current_user.nickname %>さん
@@ -35,13 +37,39 @@
       </div>
       <div class="side-footer">
         <p>ユーザー</p>
-        <% current_user.groups.each do |group| %>
-          <div class="group">
-            <div class="group-name">
-              <%= link_to group.name, group_messages_path(group) %>
+        <%# current_user.user_groups.each do |group| %>
+          <%# group.user_id %>
+        <%# end %>
+
+
+        <%# if @group.user_groups.second.user.id == current_user.id %>
+        <%# @group.users.each do |user| %>
+          <%#= link_to user[:id], group_messages_path(group) %>
+        <%# end %>
+
+        <%#= link_to @group.users.where.not(id: current_user.id) %>
+
+        <%# current_user.groups.users.where.not(id: current_user.id) %>
+        
+
+
+          <% current_user.groups.each do |group| %>
+            <div class="group">
+              <div class="group-name">
+              <%#= link_to @group.users.where.not(id: current_user.id), group_messages_path(group) %>
+              <%#= link_to (gourp.user_ids User.where.not(id: current_user.id)).nickname, group_messages_path(group) %>
+                <% if group.user_groups.first.user_id == current_user.id %>
+                  <%= link_to group.user_groups.second.user.nickname, group_messages_path(group) %>
+                <% else %>
+                  <%= link_to group.user_groups.first.user.nickname, group_messages_path(group) %>
+                <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+
+
+
+        <%# end %>
       </div>
     </div>
   </div>
