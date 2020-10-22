@@ -9,7 +9,7 @@
         <div class="left_header">
           <div class="header_title">
             <div class="group_name">
-              <%= @group.name %>
+              <p>チーム名：<%= @group.name %></p>
             </div>
 
 
@@ -22,8 +22,11 @@
                   タイプ：<%= @group.user_groups.second.user.enneagram_type&.type_result&.name %>
                 </div>
               </div>
-              <div class="never_do">
-                決してやらない事：<%= @group.user_groups.second.user.enneagram_type&.type_result&.never_do %>
+              <div class="how_to">
+                  <li>モチベーションの上げ方　→　<%= @group.user_groups.second.user.enneagram_type&.type_result&.motivation %></li>
+                  <li>アドバイス方法　　　　　→　<%= @group.user_groups.second.user.enneagram_type&.type_result&.advice %></li>
+                  <li>されて嫌な事　　　　　　→　<%= @group.user_groups.second.user.enneagram_type&.type_result&.hate %></li>
+                  <li>絶対にやらない事　　　　→　<%= @group.user_groups.second.user.enneagram_type&.type_result&.never_do %></li>
               </div>
               
             <% else %>
@@ -36,8 +39,11 @@
                   タイプ：<%= @group.user_groups.first.user.enneagram_type&.type_result&.name %>
                 </div>
               </div>
-              <div class="never_do">
-                決してやらない事：<%= @group.user_groups.first.user.enneagram_type&.type_result&.never_do %>
+              <div class="how_to">
+                  <li>モチベーションの上げ方　→　<%= @group.user_groups.first.user.enneagram_type&.type_result&.motivation %></li>
+                  <li>アドバイス方法　　　　　→　<%= @group.user_groups.first.user.enneagram_type&.type_result&.advice %></li>
+                  <li>されて嫌な事　　　　　　→　<%= @group.user_groups.first.user.enneagram_type&.type_result&.hate %></li>
+                  <li>絶対にやらない事　　　　→　<%= @group.user_groups.first.user.enneagram_type&.type_result&.never_do %></li>
               </div>
             <% end %>
           </div>

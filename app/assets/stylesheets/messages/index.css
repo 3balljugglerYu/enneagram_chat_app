@@ -23,7 +23,7 @@
 .header_title{
   color: rgb(0, 0, 0);
   font-size: 24px;
-  margin-top: 36px;
+  margin-top: 20px;
 }
 
 .header_button{
@@ -38,7 +38,7 @@
 }
 
 .group_name{
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .partner_info{
@@ -53,8 +53,12 @@
   font-size: 30px;
 }
 
-.never_do{
-  font-size: 20px;
+.how_to{
+  color: rgb(78, 78, 78);
+  font-size: 15px;
+  text-decoration:underline;
+  text-decoration-color:#a5a5a5;
+  list-style: none;
 }
 
 
