@@ -5,14 +5,16 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     # binding.pry
     @messages = @group.messages.includes(:user)
-    # @user_group = UserGroup.find(params[:user_group_id])
+
+    # @messages = Message.all
   end
 
   def create
-    # binding.pry
     @group = Group.find(params[:group_id])
     @message = @group.messages.new(message_params)
+    # binding.pry
     if @message.save
+      ActionCable.server.broadcast 'message_channel', content: @message
       redirect_to group_messages_path(@group)
     else
       @messages = @group.messages.includes(:user)

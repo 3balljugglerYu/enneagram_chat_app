@@ -1,9 +1,9 @@
 <div class="all_view">
 <%= render "shared/header"%>
   <div class="main">
-  
+
     <%= render "shared/side_message"%>
-    
+
     <div class="chat_main">
       <div class="chat_header">
         <div class="left_header">
@@ -23,12 +23,12 @@
                 </div>
               </div>
               <div class="how_to">
-                  <li>モチベーションの上げ方　→　<%= @group.user_groups.second.user.enneagram_type&.type_result&.motivation %></li>
-                  <li>アドバイス方法　　　　　→　<%= @group.user_groups.second.user.enneagram_type&.type_result&.advice %></li>
-                  <li>されて嫌な事　　　　　　→　<%= @group.user_groups.second.user.enneagram_type&.type_result&.hate %></li>
-                  <li>絶対にやらない事　　　　→　<%= @group.user_groups.second.user.enneagram_type&.type_result&.never_do %></li>
+                  <li>モチベーションの上げ方  → <%= @group.user_groups.second.user.enneagram_type&.type_result&.motivation %></li>
+                  <li>アドバイス方法        → <%= @group.user_groups.second.user.enneagram_type&.type_result&.advice %></li>
+                  <li>されて嫌な事          → <%= @group.user_groups.second.user.enneagram_type&.type_result&.hate %></li>
+                  <li>絶対にやらない事       → <%= @group.user_groups.second.user.enneagram_type&.type_result&.never_do %></li>
               </div>
-              
+
             <% else %>
 
               <div class="partner_info">
@@ -50,15 +50,52 @@
         </div>
         <div class="right_header">
           <div class="header_button">
-            <%= link_to "チャットを終了する", group_path(@group), method: :delete %>
+            <%= link_to "削除", group_path(@group), method: :delete %>
           </div>
         </div>
       </div>
-      <div class="messages">
 
-        <%= render partial: "message", collection: @messages %>
-
+      <div class="contents">
+        <div id="contents">
+          <% @messages.each do |message| %>
+            <% if current_user.id == message.user_id %>
+              <% unless message.image.attached? %>
+                <div class="content_entire">
+                  <div class="content">
+                    <p><%= message.content %></p>
+                    <div class="time"><%= message.created_at.strftime('%H:%M') %></div>
+                  </div>
+                </div>
+              <% else %>
+                <div class="image_entire">
+                  <div class="image">
+                  <%= image_tag message.image.variant(resize: "300 x 300"), class: "content_image"  %>
+                  </div>
+                  <div class="image_time"><%= message.created_at.strftime('%H:%M') %></div>
+                </div>
+              <% end %>
+            <% else %>
+              <div id="actioncable">
+                <% unless message.image.attached? %>
+                  <div class="content_entire_partner">
+                    <div class="content_partner">
+                      <p><%= message.content %></p>
+                      <div class="time_partner"><%= message.created_at.strftime('%H:%M') %></div>
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="image_entire_partner">
+                    <%= image_tag message.image.variant(resize: "300 x 300"), class: "content_image_partner" if message.image.attached? %>
+                    <div class="time_partner"><%= message.created_at.strftime('%H:%M') %></div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div id="end"></div>
       </div>
+
       <%= form_with model: [@group, @message], class: "form", local: true do |f| %>
         <div class="form_input">
           <%= f.text_field :content, class: "form_message", placeholder: "type a message" %>

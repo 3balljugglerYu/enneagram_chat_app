@@ -65,90 +65,141 @@
 
 
 /* messages-center */
-
-.messages{
+.contents{
+  /* overflow: scroll; */
+  overflow-y: scroll;
   background-color: rgb(255, 255, 255);
   height: calc(100% - 200px - 90px);
-  padding: 46px 40px 0;
-  overflow: scroll;
+  padding: 20px;
+  /* display: flex; */
 }
 
-.current_messages{
-  background-color: rgb(234, 255, 243);
+/* 自分側のメッセージフォーマット */
+.content_entire{
+  padding: 10px;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 0 60%;
 }
 
+.content{
+  border-radius:50%;
+  background-size:cover;
+  justify-content: flex-end;
+}
 
+.content p{
+  display: inline-block;
+  background-color: rgb(193, 204, 255);
+  border-radius: 10px;
+  padding: 6px;
+  word-break: break-all;
+}
 
-.upper_message{
+.time{
+  color: rgb(193, 204, 255);
+  font-size: 7px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 3px 3px 0 0;
+  margin-bottom: 10px;
+}
+
+.image_entire{
+  display: flex;
+  flex-direction: column;
+}
+
+.image{
   display: flex;
   justify-content: flex-end;
 }
 
-.upper_partner_message{
+.content_image{
+  display: inline-block;
+  background-color: rgb(193, 204, 255);
+  border-radius: 10px;
+  padding: 6px;
+  margin: 0 10px 0 0 ;
+  word-break: break-all;
+}
+
+.image_time{
+  color: rgb(193, 204, 255);
+  font-size: 7px;
   display: flex;
+  justify-content: flex-end;
+  padding: 0 12px 0 0;
+  margin-bottom: 10px;
 }
 
-.message_user{
-  color: rgb(44, 44, 44);
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.123);
+/* 相手側のメッセージフォーマット */
+
+.content_entire_partner{
+  padding: 10px;
+  height: auto;
 }
 
-.message_date {
-  color: rgb(31, 31, 31);
-  font-size: 12px;
+.content_partner{
+  display:inline-block;
+  border-radius:50%;
+  background-size:cover;
+  width: 400px;
+}
+
+.content_partner p{
+  display: inline-block;
+  background-color: rgb(236, 205, 205);
+  border-radius: 10px;
+  padding: 6px;
+  margin: 0 0 10px 10px;
+  word-break: break-all;
+}
+
+.time_partner{
+  color: rgb(231, 205, 205);
+  font-size: 7px;
   padding-left: 10px;
 }
 
+.image_entire_partner{
+  display:inline-block;
+  border-radius:50%;
+  background-size:cover;
+  width: 400px;
+  padding-left: 8px;
+  margin-bottom: 10px;
+}
+
+.content_image_partner{
+  display: inline-block;
+  background-color: rgb(236, 205, 205);
+  border-radius: 10px;
+  padding: 6px;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==================================================== */
-
-.message{
-  /* width: 50%;
-  text-align: end;
-  margin: 20px 0 0 auto; */
-}
-
-.lower_message{
-  width: 50%;
-  text-align: end;
-  margin: 20px 0 0 auto;
-}
-
-dd.message_content h3 span{
-  padding: 15px;
-  color: rgb(51, 51, 51);
-  background: linear-gradient(151deg, transparent 33%, #0000002e 94%);
-}
-
-.lower_partner_message{
-  width: 50%;
-  text-align: start;
-  margin: 20px 0 auto 0;
-}
-
-dd.message_partner_content h3 span{
-  padding: 15px;
-  color: rgb(51, 51, 51);
-  background: linear-gradient(-16deg, transparent 53%, #00000024 79%);
-}
-
-
-
-/* ==================================================== */
-
-/* .message_content ul{
-  background-color: rgb(231, 252, 222);
-  border-radius:80px;
-  padding: 20px;
-} */
-
-.lower_partner_message{
-  /* position: relative; */
-  /* margin-top: 10px;
-  width: 50%; */
-  /* background-color: rgb(229, 192, 192); */
-
-}
 
 /* messages-bottom */
 .form{
