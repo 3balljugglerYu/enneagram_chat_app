@@ -16,15 +16,16 @@ consumer.subscriptions.create("MessageChannel", {
     console.log(hour)
     console.log(min)
 
-    if(current_user.id == content.user_id){
     const html = `
-    <div class="content_entire">
+    <div class="content_entire_partner">
       <div class="content_partner">
         <p>${data.content.content}</p>
-        <span class="time_partner">${hour}:${min}</span>
+        <div class="time">${hour}:${min}</div>
       </div>
     </div>
     `;
+
+
     const messages = document.getElementById('contents');
     const newMessage = document.getElementById('message_content');
     messages.insertAdjacentHTML(`beforeend`, html);
@@ -34,5 +35,5 @@ consumer.subscriptions.create("MessageChannel", {
     end.scrollIntoView({
       block:"end"
     });
-    }}
+    }
 });
